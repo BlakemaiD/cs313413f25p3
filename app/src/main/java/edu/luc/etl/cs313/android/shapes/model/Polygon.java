@@ -3,8 +3,9 @@ package edu.luc.etl.cs313.android.shapes.model;
 import java.util.List;
 
 /**
- * A special case of a group consisting only of Points.
- *
+ * a special case of a group consisting only of points a closed polygon is a
+ * shape defined by a list of points; the last point is connected to the first
+ * one to close the polygon
  */
 public final class Polygon extends Group {
 
@@ -19,7 +20,6 @@ public final class Polygon extends Group {
 
     @Override
     public <Result> Result accept(final Visitor<Result> v) {
-        // TODO your job
-        return null;
+        return v.onPolygon(this);
     }
 }
